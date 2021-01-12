@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weatherapp/animations/tweenAnimation.dart';
+import 'package:weatherapp/animations/tween_animation.dart';
 
 class Splashscreen extends StatelessWidget {
   @override

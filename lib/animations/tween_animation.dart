@@ -14,7 +14,6 @@ class _OpacityanimateState extends State<Opacityanimate> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = Get.mediaQuery.size;
     return Center(
       child: TweenAnimationBuilder(
         tween: tween,
