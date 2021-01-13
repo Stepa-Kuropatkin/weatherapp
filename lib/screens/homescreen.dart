@@ -67,7 +67,7 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Current Weather'),
+        title: Text('Today\'s Weather'),
       ),
       body: Center(
         child: Column(
