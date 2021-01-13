@@ -9,21 +9,33 @@ class WeatherItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(weather.name),
-            Text(weather.main),
-            Text('${weather.temp.round().toString()}°C'),
-            Image.network(
-                'https://openweathermap.org/img/wn/${weather.icon}.png'),
-            Text(new DateFormat.yMMMd().format(weather.date)),
-            Text(new DateFormat.Hm().format(weather.date)),
-          ],
-        ),
+    String temperature = weather.temp.round().toString();
+    return Padding(
+      padding: EdgeInsets.only(left: 8.0, right: 8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Image.network(
+                  'https://openweathermap.org/img/wn/${weather.icon}.png'),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(new DateFormat.Hm().format(weather.date)),
+                  Text(weather.main),
+                ],
+              ),
+            ],
+          ),
+          Text(
+            temperature + '°C',
+            style: TextStyle(
+                fontSize: 20,
+                color:
+                    (int.parse(temperature) <= 0) ? Colors.blue : Colors.amber),
+          ),
+        ],
       ),
     );
   }

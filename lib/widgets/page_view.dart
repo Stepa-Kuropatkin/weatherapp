@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:weatherapp/screens/homescreen.dart';
 import 'package:weatherapp/screens/weekly_weather.dart';
 
-class PageViewDemo extends StatefulWidget {
+class BottomNav extends StatefulWidget {
   @override
-  _PageViewDemoState createState() => _PageViewDemoState();
+  _BottomNavState createState() => _BottomNavState();
 }
 
-class _PageViewDemoState extends State<PageViewDemo> {
+class _BottomNavState extends State<BottomNav> {
   int _seletedItem = 0;
   var _pages = [Homescreen(), WeeklyWeather()];
   PageController _pageController = PageController();

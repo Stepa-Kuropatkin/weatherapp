@@ -25,7 +25,7 @@ class _OpacityanimateState extends State<Opacityanimate> {
           );
         },
         onEnd: () {
-          Get.off(PageViewDemo());
+          Get.off(BottomNav());
         },
       ),
     );

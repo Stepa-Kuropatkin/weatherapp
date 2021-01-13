@@ -13,9 +13,6 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Weather App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: Splashscreen(),
     );
   }

@@ -69,26 +69,33 @@ class _WeeklyWeatherState extends State<WeeklyWeather> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Weekly Weather'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
-        child: forecastData != null
-            ? ListView.builder(
-                itemCount: forecastData.list.length,
-                itemBuilder: (context, index) => WeatherItem(
-                  weather: forecastData.list.elementAt(index),
+        title: Center(
+          child: isLoading
+              ? Text('')
+              : Text(
+                  weatherData.name,
                 ),
-              )
-            : Center(
-                child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2.0,
-                      valueColor: AlwaysStoppedAnimation(Colors.blue),
-                    )),
-              ),
+        ),
       ),
+      backgroundColor: Colors.white,
+      body: forecastData != null
+          ? ListView.separated(
+              itemCount: forecastData.list.length,
+              itemBuilder: (context, index) => WeatherItem(
+                weather: forecastData.list.elementAt(index),
+              ),
+              separatorBuilder: (context, index) {
+                return Divider();
+              },
+            )
+          : Center(
+              child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2.0,
+                    valueColor: AlwaysStoppedAnimation(Colors.blue),
+                  )),
+            ),
     );
   }
 }
