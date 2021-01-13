@@ -61,7 +61,7 @@ class _HomescreenState extends State<Homescreen> {
   @override
   void initState() {
     super.initState();
-        initializeDateFormatting();
+    initializeDateFormatting();
 
     loadWeather();
   }
@@ -74,6 +74,7 @@ class _HomescreenState extends State<Homescreen> {
           child: Text('Today\'s Weather'),
         ),
       ),
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -82,15 +83,12 @@ class _HomescreenState extends State<Homescreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: weatherData != null
-                        ? Weather(weather: weatherData)
-                        : CircularProgressIndicator(
-                            strokeWidth: 2.0,
-                            valueColor: AlwaysStoppedAnimation(Colors.blue),
-                          ),
-                  ),
+                  weatherData != null
+                      ? Weather(weather: weatherData)
+                      : CircularProgressIndicator(
+                          strokeWidth: 2.0,
+                          valueColor: AlwaysStoppedAnimation(Colors.blue),
+                        ),
                 ],
               ),
             ),

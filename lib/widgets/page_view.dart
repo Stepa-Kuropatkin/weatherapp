@@ -31,6 +31,8 @@ class _BottomNavState extends State<BottomNav> {
         controller: _pageController,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.wb_sunny), label: 'Today\'s Weather'),
