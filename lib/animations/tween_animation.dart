@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:weatherapp/screens/homescreen.dart';
+import 'package:weatherapp/widgets/page_view.dart';
 
 class Opacityanimate extends StatefulWidget {
   Opacityanimate({Key key}) : super(key: key);
@@ -25,7 +25,7 @@ class _OpacityanimateState extends State<Opacityanimate> {
           );
         },
         onEnd: () {
-          Get.off(Homescreen());
+          Get.off(PageViewDemo());
         },
       ),
     );

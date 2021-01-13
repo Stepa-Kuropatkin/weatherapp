@@ -4,17 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:weatherapp/models/forecast_model.dart';
 import 'package:weatherapp/models/weather_model.dart';
+import 'package:weatherapp/widgets/weather_item.dart';
 import 'package:http/http.dart' as http;
-import 'package:weatherapp/widgets/weather.dart';
-// import 'package:weatherapp/widgets/weather_item.dart';
 
-class Homescreen extends StatefulWidget {
+class WeeklyWeather extends StatefulWidget {
+  WeeklyWeather({Key key}) : super(key: key);
+
   @override
-  _HomescreenState createState() => _HomescreenState();
+  _WeeklyWeatherState createState() => _WeeklyWeatherState();
 }
 
-class _HomescreenState extends State<Homescreen> {
+class _WeeklyWeatherState extends State<WeeklyWeather> {
   bool isLoading = false;
+
   WeatherData weatherData;
   ForecastData forecastData;
 
@@ -59,38 +61,33 @@ class _HomescreenState extends State<Homescreen> {
 
   @override
   void initState() {
-    super.initState();
     loadWeather();
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Current Weather'),
+        title: Text('Weekly Weather'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: weatherData != null
-                        ? Weather(weather: weatherData)
-                        : CircularProgressIndicator(
-                            strokeWidth: 2.0,
-                            valueColor: AlwaysStoppedAnimation(Colors.blue),
-                          ),
-                  ),
-                ],
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
+        child: forecastData != null
+            ? ListView.builder(
+                itemCount: forecastData.list.length,
+                itemBuilder: (context, index) => WeatherItem(
+                  weather: forecastData.list.elementAt(index),
+                ),
+              )
+            : Center(
+                child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2.0,
+                      valueColor: AlwaysStoppedAnimation(Colors.blue),
+                    )),
               ),
-            ),
-          ],
-        ),
       ),
     );
   }

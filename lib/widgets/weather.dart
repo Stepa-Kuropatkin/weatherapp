@@ -17,7 +17,7 @@ class Weather extends StatelessWidget {
           style: new TextStyle(fontSize: 32.0),
         ),
         Text('${weather.temp.round().toString()}°C'),
-        Image.network('https://openweathermap.org/img/w/${weather.icon}.png'),
+        Image.network('https://openweathermap.org/img/wn/${weather.icon}.png'),
         Text(new DateFormat.yMMMd().format(weather.date)),
         Text(new DateFormat.Hm().format(weather.date)),
       ],
