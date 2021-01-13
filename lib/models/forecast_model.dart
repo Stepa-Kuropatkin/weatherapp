@@ -14,7 +14,7 @@ class ForecastData {
               isUtc: false),
           name: json['city']['name'],
           temp: e['main']['temp'].toDouble(),
-          main: e['weather'][0]['main'],
+          description: e['weather'][0]['description'],
           icon: e['weather'][0]['icon']);
       list.add(w);
     }

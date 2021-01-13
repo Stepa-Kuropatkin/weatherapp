@@ -11,9 +11,9 @@ class Weather extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(weather.name),
+        Text(weather.name + ", " + weather.country),
         Text(
-          weather.main,
+          weather.description[0].toUpperCase()+weather.description.substring(1),
           style: new TextStyle(fontSize: 32.0),
         ),
         Text('${weather.temp.round().toString()}°C'),

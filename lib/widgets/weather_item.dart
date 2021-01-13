@@ -23,7 +23,8 @@ class WeatherItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(new DateFormat.Hm().format(weather.date)),
-                  Text(weather.main),
+                  SizedBox(height: 8.0),
+                  Text(weather.description),
                 ],
               ),
             ],
