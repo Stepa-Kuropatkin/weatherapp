@@ -17,7 +17,7 @@ class WeatherItem extends StatelessWidget {
           children: [
             Text(weather.name),
             Text(weather.main),
-            Text('${weather.temp.toString()}°F'),
+            Text('${weather.temp.round().toString()}°C'),
             Image.network(
                 'https://openweathermap.org/img/w/${weather.icon}.png'),
             Text(new DateFormat.yMMMd().format(weather.date)),
