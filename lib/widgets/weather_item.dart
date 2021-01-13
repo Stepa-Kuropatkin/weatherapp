@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weatherapp/models/weather_model.dart';
 
+
 class WeatherItem extends StatelessWidget {
   final WeatherData weather;
 
@@ -15,22 +16,19 @@ class WeatherItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
+          Image.network(
+              'https://openweathermap.org/img/wn/${weather.icon}.png'),
+          Column(
             children: [
-              Image.network(
-                  'https://openweathermap.org/img/wn/${weather.icon}.png'),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(new DateFormat.Hm().format(weather.date)),
-                  SizedBox(height: 8.0),
-                  Text(weather.description),
-                ],
-              ),
+              Text(new DateFormat.Hm().format(weather.date)),
+              SizedBox(height: 8.0),
+              Text(weather.description),
+              SizedBox(height: 8.0),
+              Text(DateFormat.MMMEd('ru').format(weather.date), style: TextStyle(color: Colors.black26, fontSize: 12),)
             ],
           ),
           Text(
-            temperature + '°C',
+            temperature + '°',
             style: TextStyle(
                 fontSize: 20,
                 color:

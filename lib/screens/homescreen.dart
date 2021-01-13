@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:weatherapp/models/forecast_model.dart';
 import 'package:weatherapp/models/weather_model.dart';
 import 'package:http/http.dart' as http;
@@ -60,6 +61,8 @@ class _HomescreenState extends State<Homescreen> {
   @override
   void initState() {
     super.initState();
+        initializeDateFormatting();
+
     loadWeather();
   }
 
