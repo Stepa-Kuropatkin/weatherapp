@@ -20,9 +20,9 @@ class WeatherItem extends StatelessWidget {
               'https://openweathermap.org/img/wn/${weather.icon}.png'),
           Column(
             children: [
-              Text(new DateFormat.Hm().format(weather.date)),
+              Text(new DateFormat.Hm().format(weather.date), style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black38),),
               SizedBox(height: 8.0),
-              Text(weather.description),
+              Text(weather.description, style: TextStyle(),),
               SizedBox(height: 8.0),
               Text(DateFormat.MMMEd('ru').format(weather.date), style: TextStyle(color: Colors.black26, fontSize: 12),)
             ],

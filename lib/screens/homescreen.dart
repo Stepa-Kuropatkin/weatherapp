@@ -71,7 +71,7 @@ class _HomescreenState extends State<Homescreen> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text('Today\'s Weather'),
+          child: Text('Погода сегодня'),
         ),
       ),
       backgroundColor: Colors.white,

@@ -12,7 +12,7 @@ class Weather extends StatelessWidget {
     String temperatureFeelsLike = weather.feelsLike.round().toString();
     double mmhgPressure = weather.pressure * 0.75;
 
-    return Container(
+    return Center(
       child: Column(
         children: [
           Image.network(
@@ -66,7 +66,14 @@ class Weather extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: [
-                          Text('влажность'),
+                          Container(
+                            width: 50,
+                            height: 50,
+                            child: Image.network(
+                              'https://apple48.ru/assets/images/vlaga.png',
+                              fit: BoxFit.contain,
+                            ),
+                          ),
                           SizedBox(height: 4),
                           Text(
                             weather.humidity.toString() + '%',
@@ -78,7 +85,14 @@ class Weather extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: [
-                          Text('скорость ветра'),
+                          Container(
+                            width: 50,
+                            height: 50,
+                            child: Image.network(
+                              'https://www.pngitem.com/pimgs/m/16-160892_disney-cars-png-cars-3-lightning-mcqueen-transparent.png',
+                              fit: BoxFit.contain,
+                            ),
+                          ),
                           SizedBox(height: 4),
                           Text(
                             weather.speed.toStringAsFixed(1).toString() +
@@ -91,7 +105,14 @@ class Weather extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: [
-                          Text('давление'),
+                          Container(
+                            width: 50,
+                            height: 50,
+                            child: Image.network(
+                              'https://thumbs.dreamstime.com/b/d-person-under-pressure-illustration-stress-confused-man-hit-many-falling-arrows-rendering-human-people-character-30629483.jpg',
+                              fit: BoxFit.contain,
+                            ),
+                          ),
                           SizedBox(height: 4),
                           Text(
                             mmhgPressure.round().toString() + ' мм рт. ст.',
@@ -104,6 +125,13 @@ class Weather extends StatelessWidget {
               )
             ],
           ),
+          Container(
+            height: 200,
+            child: Image.network(
+              'https://3.bp.blogspot.com/-WOduZAGXB6A/Wnu8O331cwI/AAAAAAAAWlo/Ch_IUzox-xoV5LDwnaj_FxL6NqmjWMKxQCLcBGAs/s1600/Misc_banner_annoying_scam.gif',
+              fit: BoxFit.contain,
+            ),
+          )
         ],
       ),
     );

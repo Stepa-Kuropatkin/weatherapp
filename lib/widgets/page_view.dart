@@ -35,9 +35,9 @@ class _BottomNavState extends State<BottomNav> {
         elevation: 0,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.wb_sunny), label: 'Today\'s Weather'),
+              icon: Icon(Icons.wb_sunny), label: 'Погода сегодня'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.wb_cloudy), label: 'Weekly Weather'),
+              icon: Icon(Icons.wb_cloudy), label: 'Погода на 5 дней'),
         ],
         currentIndex: _seletedItem,
         onTap: (index) {
