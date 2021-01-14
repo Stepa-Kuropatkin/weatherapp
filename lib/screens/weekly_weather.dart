@@ -8,15 +8,12 @@ import 'package:weatherapp/widgets/weather_item.dart';
 import 'package:http/http.dart' as http;
 
 class WeeklyWeather extends StatefulWidget {
-  WeeklyWeather({Key key}) : super(key: key);
-
   @override
   _WeeklyWeatherState createState() => _WeeklyWeatherState();
 }
 
 class _WeeklyWeatherState extends State<WeeklyWeather> {
   bool isLoading = false;
-
   WeatherData weatherData;
   ForecastData forecastData;
 
@@ -72,9 +69,11 @@ class _WeeklyWeatherState extends State<WeeklyWeather> {
         title: Center(
           child: isLoading
               ? Text('')
-              : Text(
-                  weatherData.name,
-                ),
+              : weatherData != null
+                  ? Text(
+                      weatherData.name,
+                    )
+                  : Text(''),
         ),
       ),
       backgroundColor: Colors.white,

@@ -7,7 +7,6 @@ import 'package:weatherapp/models/forecast_model.dart';
 import 'package:weatherapp/models/weather_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:weatherapp/widgets/weather.dart';
-// import 'package:weatherapp/widgets/weather_item.dart';
 
 class Homescreen extends StatefulWidget {
   @override
