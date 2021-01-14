@@ -125,13 +125,6 @@ class Weather extends StatelessWidget {
               )
             ],
           ),
-          Container(
-            height: 200,
-            child: Image.network(
-              'https://3.bp.blogspot.com/-WOduZAGXB6A/Wnu8O331cwI/AAAAAAAAWlo/Ch_IUzox-xoV5LDwnaj_FxL6NqmjWMKxQCLcBGAs/s1600/Misc_banner_annoying_scam.gif',
-              fit: BoxFit.contain,
-            ),
-          )
         ],
       ),
     );

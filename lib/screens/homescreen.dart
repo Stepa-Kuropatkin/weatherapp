@@ -85,10 +85,21 @@ class _HomescreenState extends State<Homescreen> {
                 children: [
                   weatherData != null
                       ? Weather(weather: weatherData)
-                      : CircularProgressIndicator(
-                          strokeWidth: 2.0,
-                          valueColor: AlwaysStoppedAnimation(Colors.blue),
-                        ),
+                      : Text(''),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: isLoading
+                        ? CircularProgressIndicator(
+                            strokeWidth: 2.0,
+                            valueColor: AlwaysStoppedAnimation(Colors.blue),
+                          )
+                        : IconButton(
+                            icon: Icon(Icons.refresh),
+                            tooltip: 'Refresh',
+                            onPressed: () => loadWeather(),
+                            color: Colors.blue,
+                          ),
+                  ),
                 ],
               ),
             ),
